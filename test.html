@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://bbs.pediy.com/view/css/bootstrap.css">
+<link rel="stylesheet" href="https://bbs.pediy.com/view/css/bootstrap-bbs.css">
+<link rel="stylesheet" href="https://bbs.pediy.com/plugin/kanxue/css/kanxue.css">
+
+<link href="../common/css/global.css" rel="stylesheet" type="text/css" />
+<link href="../common/css/layout.css" rel="stylesheet" type="text/css" />
+
+<title>看雪工具</title>
+<script language="javascript">
+var current = 0;
+var imgNum = 1;
+var interval = 0;
+function showContent(index){
+	var oldTag = document.getElementById("list" + current.toString());
+	var oldCon = document.getElementById("showCon" + current.toString());
+	var newTag = document.getElementById("list" + index.toString());
+	var newCon = document.getElementById("showCon" + index.toString());
+	if(current != index){
+		oldTag.className= " ";
+		oldCon.style.display = "none";
+		current = index;
+		newTag.className="on";
+		newCon.style.display = "block";
+	}
+}
+function setMode(n){
+	if(n != null){
+		imgNum = n+1;
+	}
+	if(interval == 0){
+		interval = setInterval("showTime()", 3000);  //时间调整
+	}
+}
+function showTime(){
+	if(imgNum > 3){
+		imgNum = 0;
+	}
+	showContent(imgNum);
+	imgNum ++;
+}
+ 
+</script></head>
+<body>
+<div id="top_header" class="mb-1">
+    
+</div>
+
+<div class="bg-white">
+<div class="main" style="overflow: hidden; margin-top: 2rem;">
+    <div class="learnnav ann line fl">
+        <div class="tit">
+            <h2>Windows平台</h2>
+        </div>
+        <div class="learnnav_con">
+			<a href="debuggers.htm">调试器</a>
+			<a href="disassemblers.htm" class="teshu">反汇编</a>
+			<a href="decompilers.htm">反编译</a>
+			<a href="compilers.htm">编译器</a>
+			<a href="petools.htm">PE工具</a>
+			<a href="editors.htm">编辑器</a>
+			<a href="packers.htm">加密工具</a>
+			<a href="unpacker.htm">脱壳工具</a>
+			<a href="patchers.htm">补丁工具</a>
+			<a href="spy.htm">监视软件</a>
+			<a href="code.htm">代码计算</a>
+			<a href="cryptography.htm">密码学</a>
+			<a href="dotnet.htm">.Net平台</a>
+			<a href="0day.htm">漏洞分析</a>
+			<a href="websec.htm">web安全</a>
+			<a href="other.htm">其他工具</a>
+        </div>
+		
+	  
+				
+	   
+		
+		
+		<div class="tit">
+            <h2>Android平台</h2>
+        </div>
+        <div class="learnnav_con">
+			<a href="../android/decompilers.htm">反编译</a>			
+			<a href="../android/xml.htm">AXML解码</a>			
+            <a href="../android/debuggers.htm">调试器</a>
+			<a href="../android/protectors.htm">混淆保护</a>
+			<a href="../android/spy.htm">监视工具</a>	
+			<a href="../android/integrated.htm">集成分析</a>        </div>
+
+		
+		
+    </div>
+    <div class="learncon line fr titbg">
+    	<div class="tit">
+        	<h2>反汇编工具</h2>
+        </div>
+        <div class="con">
+        	<table>
+                 <tr>
+                <th style="width:30%">程序名称</th>            
+                <th width="5%" style="width:15%">作者</th>
+                <th width="37%" style="width:55%">说明</th>
+              </tr>
+			  <tr>
+                <td class="tc" style="width:100%"  colspan="3"><b>IDA Pro</b></td>                
+              </tr>
+              <tr>
+                <td><p><a href="Disassemblers/ida/ida6.1/ida61.rar">IDA pro 6.1 </a><br />
+                    <a href="Disassemblers/ida/ida6.6/IDAPro6.6.zip">IDA pro 6.6 </a><br />
+                  <a href="Disassemblers/ida/ida6.8/IDAPRO68.zip">IDA pro 6.8</a></p>
+                  <p><a href="Disassemblers/ida/ida7.0/ida70.zip">IDA pro 7.0 </a></p></td>
+                <td class="tc">&nbsp;</td>
+                <td><span class="p9">IDA Pro是DataRescue开发的专业反汇编工具, 它是一款专业的反汇编工具，己成为Reverse engineerer的必备工具。 若需要，请安装<a href="Disassemblers/ida/ida6.1/python26.rar"><u>python</u>脚本</a>。</span></td>
+              </tr>
+              
+              <tr>
+                <td class="tc" style="width:100%"  colspan="3"><b>IDA SDK </b></td>
+              </tr>
+              <tr>
+                <td><a href="Disassemblers/ida/sdk/idasdk62.zip">IDA 6.2 SDK</a><br />
+                  <a href="Disassemblers/ida/sdk/idasdk66.rar">IDA 6.6 SDK</a><a href="Disassemblers/C32Asm/c32asm.zip"></a></td>
+                <td class="tc">&nbsp;</td>
+                <td><span class="p9">开发插件等需要。</span></td>
+              </tr>
+              <tr>
+                <td class="tc" style="width:100%"  colspan="3"><b>IDA 插件 </b></td>
+              </tr>
+              <tr>
+                <td><a href="Disassemblers/C32Asm/c32asm.zip"></a></td>
+                <td class="tc">&nbsp;</td>
+                <td>更多IDA插件请访问：<a href="http://bbs.pediy.com/forumdisplay.php?f=53" target="_blank">http://bbs.pediy.com/forumdisplay.php?f=53</a></td>
+              </tr>
+              
+			  <tr>
+                <td class="tc" style="width:100%"  colspan="3"><b>C32Asm</b></td>                
+              </tr>
+              <tr>
+                <td><a href="Disassemblers/C32Asm/c32asm.zip">C32Asm v1.0.9.0</a></td>
+                <td class="tc"><span class="p9">pll621</span></td>
+                <td><span class="p9">C32Asm是集反汇编、16进制工具 、Hiew修改功能与一体。<br />
+若需要得到最新版，请关注：<a href="http://bbs.pediy.com/forumdisplay.php?f=156" target="_blank"><strong>『C32Asm』论坛</strong></a></span></td>
+              </tr>
+			  <tr>
+                <td class="tc" style="width:100%"  colspan="3"><b>W32DASM</b></td>                
+              </tr>
+              <tr>
+               
+                <td class="tc"><div align="left"><a href="Disassemblers/W32Dasm/W32dsm.rar">W32DASM</a></div></td>
+                <td>&nbsp;</td>  <td><span class="p9">静态分析中文软件的利器！优点是速度快。</span></td>
+              </tr>	  <tr>
+                <td class="tc" style="width:100%"  colspan="3"><b>Hopper Disassembler</b></td>                
+              </tr>
+              <tr>
+               
+                <td class="tc"><div align="left"><a href="Disassemblers/hopper/hopper-2.7.13.rar">Hopper v2.7.13 </a></div></td>
+                <td>&nbsp;</td>  <td>Hopper Disassembler一款专业的32位和64位可执行文件的二进制反汇编，反编译和调试软件。</td>
+              </tr>
+			  <tr>
+                <td  colspan="3" class="tc" style="width:100%"><strong>辅助工具</strong></td>                
+              </tr>
+              <tr>
+               
+                <td class="tc"><div align="left"><a href="Disassemblers/Flower/KillFlowerV1.2.zip">花指令清除器1.2</a></div></td>
+                <td>&nbsp;</td>  <td><span class="p9">花指令是对付静态分析的一个重要手段，该工具可以去除花指令（注：效果还是不太理想）</span></td>
+              </tr>		  <tr>
+                <td  colspan="3" class="tc" style="width:100%"><strong>Mac平台</strong></td>                
+              </tr>
+              <tr>
+               
+                <td class="tc"><div align="left"><a href="Disassemblers/Mac/Hopper/Hopper-2.7.13_mac.zip">Hopper Disassembler v2.7.13</a> </div></td>
+                <td>&nbsp;</td>  <td>一款Mac平台专业的二进制编译软件，32位和64位可执行文件的二进制反汇编，反编译和调试软件。它将让你拆开你想要的任何二进制，为您提供所有信息内容，如输入的符号，控制流程图，还可以检索有关反汇编代码的的程序信息，让你说出你想要的所有的对象。</td>
+              </tr>
+            </table>
+
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div></div>
+<div class="footer">
+<div class="Area">
+	 <table width="100%" height="25">
+              <tr>
+			          <tr>
+                <td><span style="width:5%">&copy; 2000-2018 看雪学院（<a href="http://tools.pediy.com/"><b><font color="#000000">PE</font><font color="#ff6000">diy</font><font color="#000000">.com</font></b></a>）| <a href="https://zhuanlan.kanxue.com/article-56.htm">联系我们 </a>| <a href="http://www.miitbeian.gov.cn/" target="_blank">京ICP备10040895号-17</a></span></td>
+              
+                <td class="tr"></td>
+      
+	
+      </table>	  
+			  
+    	<p><br/>
+   	  </p>
+  </div>
+</div>
+<script src="https://bbs.pediy.com/view/js/jquery-3.1.0.js?1.0"></script>
+
+<script src="https://bbs.pediy.com/view/js/popper.js?1.0"></script>
+<script src="https://bbs.pediy.com/view/js/bootstrap.js?1.0"></script>
+<script type="text/javascript">
+  $(function(){
+        $("#top_header").load("../header_nav.html");
+  })
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9784446-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
